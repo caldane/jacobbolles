@@ -1,0 +1,189 @@
+body {
+    &::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        background-color: rgba(0, 0, 0, 0.5);
+        background-image: url("/image.png");
+        height: 100svh;
+        background-size: cover;
+        filter: saturate(0) blur(5px) brightness(0.7);
+        margin: 0;
+    }
+
+    .menu.align-center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style-type: none;
+            gap: 1rem;
+            padding: 0;
+            margin: 0;
+
+            li {
+                border-radius: 5px;
+                color: #fff;
+                transition: background-color 0.3s ease;
+                padding-block-start: 0.8rem;
+                padding-block-end: 0.2rem;
+
+                &[data-active] {
+                    border-bottom: 2px solid rgb(255, 255, 255);
+                }
+
+                a {
+                    text-decoration: none;
+                    color: #fff;
+                    font-weight: bold;
+                    font-size: 16px;
+                    font-family: "Poppins", Helvetica, Arial, sans-serif;
+
+                    &:hover {
+                        color: var(--color-accent-2);
+                    }
+                }
+            }
+        }
+    }
+
+    .hero {
+        margin-block-start: 3rem;
+        margin-block-end: 4rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+
+        img {
+            filter: invert(1);
+            margin-block-end: 2rem;
+
+            &:hover {
+                filter: invert(0);
+                background: rgba(255, 255, 255, 0.5);
+                border-radius: 5px;
+            }
+        }
+    }
+
+    .content-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        height: 60svh;
+
+        article {
+            transition: filter 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+            z-index: 1;
+            filter: grayscale(100%) brightness(0.8);
+            display: grid;
+            align-items: center;
+            justify-content: center;
+            grid-template-columns: 3fr 1fr;
+            color: var(--color-text-primary);
+
+            div {
+                background-size: cover;
+                height: 100%;
+                width: 100%;
+                grid-row: 1;
+                grid-column: 1/ -1;
+            }
+
+            h2 {
+                grid-row: 1;
+                grid-column: 2;
+                padding: 3rem;
+                border-radius: 5px;
+                background-color: rgba(0, 0, 0, 0.4);
+            }
+
+            &:first-child div {
+                background-color: royalblue;
+                background-image: url("/assets/images/abstract-of-new-home-construct-11945165.jpg");
+            }
+
+            &:nth-child(2) div {
+                background-color: crimson;
+                background-image: url("/assets/images/Front-photo-of-luxury-home-16567121.jpg");
+            }
+            &:nth-child(3) div {
+                background-color: gold;
+                background-image: url("/assets/images/Kitchen-in-luxury-home-with-wh-16568375.jpg");
+            }
+            &:nth-child(4) div {
+                background-color: lightgreen;
+                background-image: url("/assets/images/Close-up-of-a-man-using-mobile-53439139.jpg");
+            }
+
+            &:hover {
+                z-index: 2;
+                transform: scale(1.05);
+                filter: grayscale(0%) brightness(1) saturate(1.5);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+                h2 {
+                    color: black;
+                    background-color: rgba(255, 255, 255, 0.568);
+                }
+            }
+        }
+    }
+
+    .content-bar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--color-surface);
+
+        > article {
+            max-width: 1120px;
+            display: grid;
+            grid-template-rows: auto auto;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            padding-block: 4rem;
+
+            h3 {
+                text-transform: uppercase;
+                text-align: end;
+                margin: 0;
+            }
+
+            .heading {
+                grid-column: 1;
+                grid-row: 1;
+                color: var(--color-text-primary);
+            }
+
+            .trusted {
+                grid-column: 1;
+                grid-row: 2;
+                color: var(--color-bg);
+                font-size: 2.3rem;
+                display: flex;
+                align-items: flex-end;
+            }
+
+            .caption {
+                grid-column: 2;
+                grid-row: 1/ -1;
+                color: var(--color-text-primary);
+                font-weight: bold;
+                text-align: start;
+                margin-block-end: 0.6rem;
+
+                a {
+                    font-size: 1.3em;
+                    color: var(--color-accent-2);
+                }
+            }
+        }
+    }
+}

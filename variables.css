@@ -1,0 +1,39 @@
+:root {
+    /* Typography */
+    --font-heading: 'Raleway', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-accent: 'Dancing Script', cursive;
+  
+    /* Grayscale - Default Light Theme */
+    --color-bg: #f8f8f8;
+    --color-surface: #e6e6e6;
+    --color-border: #cccccc;
+    --color-text-primary: #222222;
+    --color-text-secondary: #555555;
+    --color-text-muted: #888888;
+  
+    /* Accent Colors */
+    --color-accent-1: #b89b6a; /* soft gold */
+    --color-accent-2: #547aa5; /* slate blue */
+  
+    /* Feedback Colors */
+    --color-success: #3a7a3f;
+    --color-warning: #c97c30;
+    --color-danger: #b23c3c;
+  }
+  
+  /* 🌙 Dark Theme Override */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-bg: #1c1c1c;
+      --color-surface: #575757;
+      --color-border: #444444;
+      --color-text-primary: #f0f0f0;
+      --color-text-secondary: #cccccc;
+      --color-text-muted: #999999;
+  
+      --color-accent-1: #d3b076; /* slightly brighter gold for contrast */
+      --color-accent-2: #7da7d9; /* softened light slate blue */
+    }
+  }
+  

@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Raleway:wght@400;700&family=Dancing+Script:wght@400;600&family=Roboto+Slab:wght@100..900&display=swap');
+
+@font-face {
+    font-family: 'Sugarcubes';
+    src: url('/assets/fonts/SugarcubesRegular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: 'Sugarcubes';
+    src: url('/assets/fonts/SugarcubesBold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-body);
+    color: var(--color-text-primary);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  /* Typography Defaults */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    margin: 0 0 0.5em 0;
+  }
+  
+  p, li, span {
+    font-family: var(--font-body);
+    font-weight: 400;
+    margin: 0 0 1em 0;
+  }
+  
+  a {
+    font-family: var(--font-accent);
+    font-weight: 600;
+    color: var(--color-accent-1);
+    text-decoration: none;
+  }
+  
+  /* Utility Theme Classes */
+  .primary {
+    background-color: var(--color-bg);
+    color: var(--color-text-primary);
+  }
+  
+  .secondary {
+    background-color: var(--color-surface);
+    color: var(--color-text-secondary);
+  }
+  
+  .text-muted {
+    color: var(--color-text-muted);
+  }
+  
+  .accent-1 {
+    color: var(--color-accent-1);
+  }
+  
+  .accent-2 {
+    color: var(--color-accent-2);
+  }
+  
