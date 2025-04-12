@@ -8,6 +8,7 @@ body {
         background-image: url("/image.png");
         height: 100svh;
         background-size: cover;
+        background-position: center;
         filter: saturate(0) blur(5px) brightness(0.7);
         margin: 0;
     }
@@ -34,7 +35,7 @@ body {
                 padding-block-end: 0.2rem;
 
                 &[data-active] {
-                    border-bottom: 2px solid rgb(255, 255, 255);
+                    border-bottom: 2px solid var(--color-accent-2);
                 }
 
                 a {
@@ -45,10 +46,23 @@ body {
                     font-family: "Poppins", Helvetica, Arial, sans-serif;
 
                     &:hover {
-                        color: var(--color-accent-2);
+                        color: var(--color-accent-1);
                     }
                 }
             }
+        }
+
+        @media screen and (max-width: 640px) {
+            & ul li a {
+                font-size: .8rem;
+            }
+        }
+
+        @media screen and (max-width: 520px) {
+            & ul {
+                display: none;
+            }
+
         }
     }
 
@@ -61,14 +75,30 @@ body {
         align-items: center;
         color: #fff;
 
-        img {
-            filter: invert(1);
-            margin-block-end: 2rem;
+        div {
+            margin: 1rem;
+            border-radius: 1.5rem;
+            aspect-ratio: 1/1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
             &:hover {
-                filter: invert(0);
-                background: rgba(255, 255, 255, 0.5);
-                border-radius: 5px;
+                background: rgba(0, 0, 0, 0.5);
+            }
+
+            svg {
+                margin-block-end: 2rem;
+                fill: var(--color-text-primary);
+                margin: 0;
+
+                &:hover {
+                    fill: var(--color-logo, var(--color-accent-1));
+
+                    text {
+                        fill: var(--color-logo-text, var(--color-accent-2));
+                    }
+                }
             }
         }
     }
@@ -76,7 +106,7 @@ body {
     .content-grid {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
-        height: 60svh;
+        min-height: 60svh;
 
         article {
             transition: filter 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
@@ -87,6 +117,7 @@ body {
             justify-content: center;
             grid-template-columns: 3fr 1fr;
             color: var(--color-text-primary);
+            overflow: hidden;
 
             div {
                 background-size: cover;
@@ -113,10 +144,12 @@ body {
                 background-color: crimson;
                 background-image: url("/assets/images/Front-photo-of-luxury-home-16567121.jpg");
             }
+
             &:nth-child(3) div {
                 background-color: gold;
                 background-image: url("/assets/images/Kitchen-in-luxury-home-with-wh-16568375.jpg");
             }
+
             &:nth-child(4) div {
                 background-color: lightgreen;
                 background-image: url("/assets/images/Close-up-of-a-man-using-mobile-53439139.jpg");
@@ -127,12 +160,35 @@ body {
                 transform: scale(1.05);
                 filter: grayscale(0%) brightness(1) saturate(1.5);
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                border-radius: 5px;
 
                 h2 {
                     color: black;
                     background-color: rgba(255, 255, 255, 0.568);
                 }
             }
+        }
+
+
+        @media screen and (max-width: 1080px) {
+            grid-template-columns: 1fr 1fr;
+
+            article {
+                grid-template-columns: 1fr 3fr;
+
+                &>div {
+                    background-position: center;
+                }
+
+                h2 {
+                    border-radius: 5px 0 0 5px;
+                }
+            }
+        }
+
+        @media screen and (max-width: 640px) {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(4, 300px);
         }
     }
 
@@ -142,7 +198,7 @@ body {
         align-items: center;
         background-color: var(--color-surface);
 
-        > article {
+        >article {
             max-width: 1120px;
             display: grid;
             grid-template-rows: auto auto;
@@ -159,7 +215,7 @@ body {
             .heading {
                 grid-column: 1;
                 grid-row: 1;
-                color: var(--color-text-primary);
+                color: var(--color-accent-1);
             }
 
             .trusted {
@@ -169,6 +225,7 @@ body {
                 font-size: 2.3rem;
                 display: flex;
                 align-items: flex-end;
+                text-wrap-style: balance;
             }
 
             .caption {
@@ -180,10 +237,329 @@ body {
                 margin-block-end: 0.6rem;
 
                 a {
-                    font-size: 1.3em;
+                    font-size: 1.5em;
                     color: var(--color-accent-2);
                 }
             }
+
+            @media screen and (max-width: 640px) {
+                & {
+                    grid-template-columns: 1fr;
+                    grid-template-rows: auto auto auto;
+                    padding: 2rem;
+                }
+
+                h3 {
+                    text-align: center;
+                }
+
+                .trusted {
+                    font-size: 1.8rem;
+                }
+
+                .caption,
+                .trusted,
+                .heading {
+                    grid-column: unset;
+                    grid-row: unset;
+                }
+            }
+
+        }
+    }
+
+    .content-contact {
+        article {
+            position: relative;
+
+            &::before {
+                content: '';
+                display: flex;
+                min-height: 640px;
+                justify-content: center;
+                align-items: center;
+                background-image: url('/assets/images/bigstock-Newly-Constructed-House-Was-In-462841765.jpg');
+                background-size: cover;
+                background-attachment: fixed;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+
+                color: white;
+                text-align: center;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                inset: 0;
+                display: block;
+                height: 100%;
+                width: 100%;
+                background-color: var(--color-accent-1);
+                opacity: 0.6;
+                filter: brightness(0.3);
+                z-index: 1;
+            }
+
+            div {
+                position: absolute;
+                max-width: 1080px;
+                width: 100%;
+                padding-block: 8rem;
+                z-index: 2;
+                display: flex;
+                gap: 2rem;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                top: 50%;
+                left: 50%;
+                translate: -50% -50%;
+
+                h3 {
+                    margin: 0;
+                }
+
+                h3:not(:has(a)) {
+                    text-transform: uppercase;
+                    font-size: 1.6rem;
+                    text-align: center;
+
+                }
+
+                h3:has(a) {
+                    font-size: 2rem;
+                    background-color: color-mix(in srgb, var(--color-accent-2), black 80%);
+                    padding-inline: 3rem;
+                    padding-block: .8rem;
+                    border-radius: 100px 0px;
+                    margin-bottom: 2rem;
+                    margin-inline: 2rem;
+
+                    a:hover {
+                        padding-block: 0.3rem;
+                    }
+
+                    @media screen and (max-width: 640px) {
+                        a:hover {
+                            padding-block: .6rem;
+                        }
+                    }
+                }
+
+                >a {
+                    background-color: color-mix(in srgb, var(--color-accent-2), black 80%);
+                    padding-inline: 3rem;
+                    padding-block: .8rem;
+                    font-size: 1.3rem;
+                    border-radius: 100px;
+
+                    &:hover {
+                        padding-block: 1.2rem;
+                        padding-inline: 3.8rem;
+                    }
+
+                }
+
+                a {
+                    &:hover {
+                        font-family: var(--font-heading);
+                        color: var(--color-text-primary);
+                        font-size: .8em;
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+
+    .content-mission {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--color-bg);
+
+        article {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            max-width: 1120px;
+            padding-block: 4rem;
+
+            h3 {
+                font-size: 4rem;
+                text-align: end;
+                color: var(--color-accent-2);
+                margin: 0;
+
+                @media screen and (max-width: 640px) {
+                    font-size: 3rem;
+                }
+            }
+
+            @media screen and (max-width: 640px) {
+                & {
+                    grid-template-columns: 1fr;
+                    padding: 2rem;
+                }
+
+                h3 {
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    .content-options {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        place-content: center;
+
+        >*,
+        &::before,
+        &::after {
+            grid-column: 1;
+            grid-row: 1;
+        }
+
+        &::before {
+            content: '';
+            width: 100%;
+            height: 100%;
+            background-image: url('/assets/images/bigstock-Abstract-of-New-Home-Construct-11944841.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            filter: grayscale(100%) brightness(0.4);
+
+        }
+
+        &::after {
+            content: '';
+            display: block;
+            height: 100%;
+            width: 100%;
+            background-color: var(--color-accent-2);
+            opacity: 0.6;
+            filter: brightness(0.3);
+            z-index: 1;
+        }
+
+        article {
+            padding-block: 5rem;
+            width: 100%;
+            padding-block: 8rem;
+            z-index: 2;
+            display: flex;
+            gap: 2rem;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            max-width: 1120px;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin: auto;
+
+            h3 {
+                text-transform: uppercase;
+                font-size: 2rem;
+                filter: drop-shadow(2px 4px color-mix(in srgb, var(--color-accent-2) 70%, black));
+
+            }
+
+            p {
+                text-wrap-style: balance;
+                text-align: center;
+
+                a {
+                    font-size: 1.6rem;
+                }
+            }
+
+            ol {
+                display: flex;
+                gap: 2rem;
+                justify-content: center;
+                align-items: flex-end;
+                list-style-position: inside;
+                counter-reset: list-num;
+
+                @media screen and (max-width: 640px) {
+                    & {
+                        flex-direction: column;
+                    }
+                }
+
+
+                li {
+                    counter-increment: list-num;
+                    display: flex;
+                    align-items: start;
+                    gap: 1rem;
+                    text-transform: uppercase;
+                    text-wrap-style: pretty;
+
+                    &::marker {
+                        font-size: 3rem;
+                        font-family: var(--font-accent);
+                    }
+
+                    &::before {
+                        content: "0" counter(list-num) ".";
+                        font-size: 3rem;
+                        line-height: 1em;
+                        font-style: italic;
+                        filter: drop-shadow(2px 4px color-mix(in srgb, var(--color-accent-2) 70%, black));
+                    }
+                }
+            }
+        }
+    }
+
+    .footer {
+        background: var(--color-bg);
+
+        article {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            justify-content: start;
+            padding: 2rem;
+            font-size: .8em;
+
+            h2 {
+                text-align: start;
+                text-transform: uppercase;
+                font-size: .5rem;
+            }
+
+            ul {
+                list-style: none;
+                font-size: 1.2rem;
+                padding-left: .8rem;
+
+                a {
+                    font-family: var(--font-heading);
+                    color: var(--color-text-muted);
+                    font-size: .8em;
+
+                    i {
+                        margin-right: 0.8rem;
+                    }
+                }
+            }
+        }
+
+        p {
+            padding-block-end: 3rem;
+            padding-inline: 2rem;
+            text-wrap-style: pretty;
+            margin-bottom: -3rem;
+            color: var(--color-text-muted);
+            font-size: .8rem;
         }
     }
 }
