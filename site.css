@@ -35,9 +35,13 @@ h5,
 h6 {
   font-family: var(--font-heading);
   font-weight: 700;
-  margin: 0 0 0.5em 0;
+  margin: 0;
   text-wrap-style: balance;
   text-align: center;
+}
+
+h1, h2, .uppercase {
+  text-transform: uppercase;
 }
 
 p,
@@ -46,6 +50,11 @@ span {
   font-family: var(--font-body);
   font-weight: 400;
   margin: 0 0 1em 0;
+}
+
+.bold-paragraph {
+  font-weight: 600;
+  font-size: 1.3rem;
 }
 
 a {
@@ -76,6 +85,22 @@ a {
 
 .accent-2 {
   color: var(--color-accent-2);
+}
+
+button {
+  background: var(--btn-bg-color, transparent);
+  color: var(--btn-color, var(--color-text-primary));
+  font-family: var(--font-body);
+  padding: 1rem 1.5rem;
+  font-size: 1.2em;
+  border: 2px solid var(--btn-border-color, var(--btn-color-primary, var(--color-text-primary)));
+  border-radius: 3px;
+
+  &:hover {
+    background: var(--btn-bg-color-hover, var(--color-accent-1));
+    color: var(--btn-color-hover, var(--color-text-primary));
+    border: 2px solid var(--btn-border-color-hover, var(--color-accent-1));
+  }
 }
 
 @media screen and (max-width: 640px) {

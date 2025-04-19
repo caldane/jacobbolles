@@ -1,9 +1,9 @@
 :root {
     /* Typography */
-    --font-heading: 'Raleway', sans-serif;
-    --font-body: 'Inter', sans-serif;
-    --font-accent: 'Dancing Script', cursive;
-  
+    --font-heading: "Raleway", sans-serif;
+    --font-body: "Inter", sans-serif;
+    --font-accent: "Dancing Script", cursive;
+
     /* Grayscale - Default Light Theme */
     --color-bg: #f8f8f8;
     --color-surface: #e6e6e6;
@@ -11,29 +11,48 @@
     --color-text-primary: #222222;
     --color-text-secondary: #555555;
     --color-text-muted: #888888;
-  
+
     /* Accent Colors */
     --color-accent-1: #b89b6a; /* soft gold */
     --color-accent-2: #547aa5; /* slate blue */
-  
+
     /* Feedback Colors */
     --color-success: #3a7a3f;
     --color-warning: #c97c30;
     --color-danger: #b23c3c;
-  }
-  
-  /* 🌙 Dark Theme Override */
-  @media (prefers-color-scheme: dark) {
+
+    --color-accent-1-90: color-mix(in srgb, var(--color-accent-1), white 50%);  
+    --color-accent-1-80: color-mix(in srgb, var(--color-accent-1), white 40%);
+    --color-accent-1-70: color-mix(in srgb, var(--color-accent-1), white 30%);
+    --color-accent-1-60: color-mix(in srgb, var(--color-accent-1), white 20%);
+    --color-accent-1-50: color-mix(in srgb, var(--color-accent-1), black 50%);
+    --color-accent-1-40: color-mix(in srgb, var(--color-accent-1), black 60%);
+    --color-accent-1-30: color-mix(in srgb, var(--color-accent-1), black 70%);
+    --color-accent-1-20: color-mix(in srgb, var(--color-accent-1), black 80%);
+    --color-accent-1-10: color-mix(in srgb, var(--color-accent-1), black 90%);
+
+    --color-accent-2-90: color-mix(in srgb, var(--color-accent-2), white 50%);
+    --color-accent-2-80: color-mix(in srgb, var(--color-accent-2), white 40%);
+    --color-accent-2-70: color-mix(in srgb, var(--color-accent-2), white 30%);
+    --color-accent-2-60: color-mix(in srgb, var(--color-accent-2), white 20%);
+    --color-accent-2-50: color-mix(in srgb, var(--color-accent-2), black 50%);
+    --color-accent-2-40: color-mix(in srgb, var(--color-accent-2), black 60%);
+    --color-accent-2-30: color-mix(in srgb, var(--color-accent-2), black 70%);
+    --color-accent-2-20: color-mix(in srgb, var(--color-accent-2), black 80%);
+    --color-accent-2-10: color-mix(in srgb, var(--color-accent-2), black 90%);
+}
+
+/* 🌙 Dark Theme Override */
+@media (prefers-color-scheme: dark) {
     :root {
-      --color-bg: #1c1c1c;
-      --color-surface: #575757;
-      --color-border: #444444;
-      --color-text-primary: #f0f0f0;
-      --color-text-secondary: #cccccc;
-      --color-text-muted: #999999;
-  
-      --color-accent-1: #ce8a4a; /* slightly brighter gold for contrast */
-      --color-accent-2: #7da7d9; /* softened light slate blue */
+        --color-bg: #1c1c1c;
+        --color-surface: #575757;
+        --color-border: #444444;
+        --color-text-primary: #f0f0f0;
+        --color-text-secondary: #cccccc;
+        --color-text-muted: #999999;
+
+        --color-accent-1: #ce8a4a; /* slightly brighter gold for contrast */
+        --color-accent-2: #7da7d9; /* softened light slate blue */
     }
-  }
-  
+}

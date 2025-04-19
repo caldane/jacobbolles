@@ -118,6 +118,7 @@ body {
             grid-template-columns: 3fr 1fr;
             color: var(--color-text-primary);
             overflow: hidden;
+            height: 100%;
 
             div {
                 background-size: cover;
@@ -135,26 +136,6 @@ body {
                 background-color: rgba(0, 0, 0, 0.4);
             }
 
-            &:first-child div {
-                background-color: royalblue;
-                background-image: url("/assets/images/abstract-of-new-home-construct-11945165.jpg");
-            }
-
-            &:nth-child(2) div {
-                background-color: crimson;
-                background-image: url("/assets/images/Front-photo-of-luxury-home-16567121.jpg");
-            }
-
-            &:nth-child(3) div {
-                background-color: gold;
-                background-image: url("/assets/images/Kitchen-in-luxury-home-with-wh-16568375.jpg");
-            }
-
-            &:nth-child(4) div {
-                background-color: lightgreen;
-                background-image: url("/assets/images/Close-up-of-a-man-using-mobile-53439139.jpg");
-            }
-
             &:hover {
                 z-index: 2;
                 transform: scale(1.05);
@@ -167,6 +148,27 @@ body {
                     background-color: rgba(255, 255, 255, 0.568);
                 }
             }
+        }
+
+        
+        a:first-child div {
+            background-color: royalblue;
+            background-image: url("/assets/images/abstract-of-new-home-construct-11945165.jpg");
+        }
+
+        a:nth-child(2) div {
+            background-color: crimson;
+            background-image: url("/assets/images/Front-photo-of-luxury-home-16567121.jpg");
+        }
+
+        a:nth-child(3) div {
+            background-color: gold;
+            background-image: url("/assets/images/Kitchen-in-luxury-home-with-wh-16568375.jpg");
+        }
+
+        a:nth-child(4) div {
+            background-color: lightgreen;
+            background-image: url("/assets/images/Close-up-of-a-man-using-mobile-53439139.jpg");
         }
 
 
@@ -330,7 +332,7 @@ body {
 
                 h3:has(a) {
                     font-size: 2rem;
-                    background-color: color-mix(in srgb, var(--color-accent-2), black 80%);
+                    background-color: var(--color-accent-2-20);
                     padding-inline: 3rem;
                     padding-block: .8rem;
                     border-radius: 100px 0px;
@@ -349,7 +351,7 @@ body {
                 }
 
                 >a {
-                    background-color: color-mix(in srgb, var(--color-accent-2), black 80%);
+                    background-color: var(--color-accent-2-20);
                     padding-inline: 3rem;
                     padding-block: .8rem;
                     font-size: 1.3rem;
@@ -467,7 +469,7 @@ body {
             h3 {
                 text-transform: uppercase;
                 font-size: 2rem;
-                filter: drop-shadow(2px 4px color-mix(in srgb, var(--color-accent-2) 70%, black));
+                filter: drop-shadow(2px 4px var(--color-accent-2-30));
 
             }
 
@@ -513,14 +515,14 @@ body {
                         font-size: 3rem;
                         line-height: 1em;
                         font-style: italic;
-                        filter: drop-shadow(2px 4px color-mix(in srgb, var(--color-accent-2) 70%, black));
+                        filter: drop-shadow(2px 4px var(--color-accent-2-30));
                     }
                 }
             }
         }
     }
 
-    .footer {
+    footer {
         background: var(--color-bg);
 
         article {
