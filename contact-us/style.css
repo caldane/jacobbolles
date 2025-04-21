@@ -1,0 +1,41 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    section.content-contact-block {
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: .8rem 3rem;
+        margin-inline: 1rem;
+        border-radius: 10px;
+        max-width: 640px;
+        width: calc(100% - 2rem);
+        border-top: 10px solid var(--color-accent-2);
+
+        p, span {
+            margin-bottom: 0;
+        }
+
+        h4 {
+            font-weight: 300;
+        }
+
+        div {
+            p {
+                display: flex;
+                justify-content: space-between;
+                gap: 2rem;
+
+                span:first-child {
+                    font-weight: 600;
+                }
+            }
+        }
+
+        @media screen and (max-width: 640px) {
+            font-size: 0.8em;
+            
+        }
+    }
+}

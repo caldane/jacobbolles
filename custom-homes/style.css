@@ -60,7 +60,7 @@ section.content-confident {
     }
 }
 
-a {
+a:not(:has(button)) {
     color: var(--color-accent-2-80);
     font-size: 1.5em;
 }

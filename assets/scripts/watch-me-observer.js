@@ -24,7 +24,7 @@ function checkWhichIsCentered() {
     const elCenter = rect.top + rect.height / 2;
     const distance = Math.abs(viewportCenter - elCenter);
 
-    if (distance < 100) {
+    if (distance < 160) {
       el.classList.add('centered');
     } else {
       el.classList.remove('centered');

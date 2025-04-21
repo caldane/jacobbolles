@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Raleway:wght@400;700&family=Dancing+Script:wght@400;600&family=Roboto+Slab:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Raleway:wght@400;700&family=Dancing+Script:wght@400;600&family=Roboto+Slab:wght@100..900&family=Satisfy&display=swap');
 
 @font-face {
   font-family: 'Sugarcubes';
@@ -24,6 +24,10 @@ body {
   color: var(--color-text-primary);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 /* Typography Defaults */
@@ -57,11 +61,11 @@ span {
   font-size: 1.3rem;
 }
 
-a {
+a:not(:has(button)) {
   font-family: var(--font-accent);
-  font-weight: 600;
+  font-weight: 500;
   color: var(--color-accent-1);
-  text-decoration: none;
+  font-size: 1.5em;
 }
 
 /* Utility Theme Classes */
@@ -95,6 +99,7 @@ button {
   font-size: 1.2em;
   border: 2px solid var(--btn-border-color, var(--btn-color-primary, var(--color-text-primary)));
   border-radius: 3px;
+  cursor: pointer;
 
   &:hover {
     background: var(--btn-bg-color-hover, var(--color-accent-1));
